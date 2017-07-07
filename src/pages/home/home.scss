@@ -1,3 +1,13 @@
 page-home {
-
+	h2 {
+		margin-top: 5% !important;
+		color: color($colors, darkgrey, base);
+		margin-right: 5%;
+		margin-left: 5%;
+	}
+	
+	.mybutton {
+		width: 90%;
+		height: 25%;
+	}
 }
