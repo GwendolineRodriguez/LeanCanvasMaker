@@ -7,29 +7,111 @@
 </ion-header>
 
 
-<ion-content padding color="primary">
-	<ion-slides>
+<ion-content padding text-center class="greybackground">
+	<ion-slides pager="true">
+		<ion-slide class="case">
+			<ion-input text-center placeholder="Nom du projet" [(ngModel)]="title"></ion-input>
+			<ion-card class="case">
+				<ion-card-header>{{ canvatype.case1 }}</ion-card-header>
 
-		<ion-slide>
-			<ion-content>
-				<ion-item>
-					<ion-label>This Input uses Scroll Assist Correctly</ion-label>
-					<ion-input>input</ion-input>
-				</ion-item>
-			</ion-content>
+				<ion-card-content>
+					<ion-textarea placeholder="Qui sont vos trois partenaires clés? Quels sont vos fournisseurs clés ? Quelles ressources sont acquises via nos partenaires ? Quelles activités clés réalisent nos partenaires ?" [(ngModel)]="canva.case1"></ion-textarea>
+				</ion-card-content>
+
+			</ion-card>
 		</ion-slide>
-
 		<ion-slide>
-			<ion-content>
-				<p>truc de ouf</p> 
-			</ion-content>
+			<ion-input text-center placeholder="Nom du projet" [(ngModel)]="title"></ion-input>
+			<ion-card class="case">
+				<ion-card-header>{{ canvatype.case2 }}</ion-card-header>
+
+				<ion-card-content>
+					<ion-textarea placeholder="Pour qui créons nous de la valeur ? Qui sont nos principaux clients ?" [(ngModel)]="canva.case2"></ion-textarea>
+				</ion-card-content>
+
+			</ion-card>		
 		</ion-slide>
-
-
 		<ion-slide>
-			<ion-content>
-				<p>truc de ouf</p> 
-			</ion-content>
+			<ion-input text-center placeholder="Nom du projet" [(ngModel)]="title"></ion-input>
+			<ion-card class="case">
+				<ion-card-header>{{ canvatype.case3 }}</ion-card-header>
+
+				<ion-card-content>
+					<ion-textarea placeholder="Quelles activités sont nécessaires pour : Notre proposition de valeur ? Nos canaux de distribution ? Nos relations clients ? Nos sources de revenus ?" [(ngModel)]="canva.case3"></ion-textarea>
+				</ion-card-content>
+
+			</ion-card>		
+		</ion-slide>
+		<ion-slide>
+			<ion-input text-center placeholder="Nom du projet" [(ngModel)]="title"></ion-input>
+			<ion-card class="case">
+				<ion-card-header>{{ canvatype.case4 }}</ion-card-header>
+
+				<ion-card-content>
+					<ion-textarea placeholder="Vos moyens de communiquer avec vos clients" [(ngModel)]="canva.case4"></ion-textarea>
+				</ion-card-content>
+
+			</ion-card>		
+		</ion-slide>
+		<ion-slide>
+			<ion-input text-center placeholder="Nom du projet" [(ngModel)]="title"></ion-input>
+			<ion-card class="case">
+				<ion-card-header>{{ canvatype.case5 }}</ion-card-header>
+
+				<ion-card-content>
+					<ion-textarea placeholder="Vos activités clés à mesurer" [(ngModel)]="canva.case5"></ion-textarea>
+				</ion-card-content>
+
+			</ion-card>		
+		</ion-slide>
+		<ion-slide>
+			<ion-input text-center placeholder="Nom du projet" [(ngModel)]="title"></ion-input>
+			<ion-card class="case">
+				<ion-card-header>{{ canvatype.case6 }}</ion-card-header>
+
+				<ion-card-content>
+					<ion-textarea placeholder="" [(ngModel)]="canva.case6"></ion-textarea>
+				</ion-card-content>
+
+			</ion-card>		
+		</ion-slide>
+		<ion-slide>
+			<ion-input text-center placeholder="Nom du projet" [(ngModel)]="title"></ion-input>
+			<ion-card class="case">
+				<ion-card-header>{{ canvatype.case7 }}</ion-card-header>
+
+				<ion-card-content>
+					<ion-textarea placeholder="Vos coûts de structure (salaires, loyers, serveurs,...) et vos coûts d'acquisitions (publicité, stand sur les salons, SEO, etc...)" [(ngModel)]="canva.case7"></ion-textarea>
+				</ion-card-content>
+
+			</ion-card>		
+		</ion-slide>
+		<ion-slide>
+			<ion-input text-center placeholder="Nom du projet" [(ngModel)]="title"></ion-input>
+			<ion-card class="case">
+				<ion-card-header>{{ canvatype.case8 }}</ion-card-header>
+
+				<ion-card-content>
+					<ion-textarea placeholder="Comment vous gagnez de l'argent ?
+											   Qui sont vos acheteurs ?" [(ngModel)]="canva.case8"></ion-textarea>
+				</ion-card-content>
+
+			</ion-card>		
+		</ion-slide>
+		<ion-slide>
+			<ion-input text-center placeholder="Nom du projet" [(ngModel)]="title"></ion-input>
+			<ion-card class="case">
+				<ion-card-header>{{ canvatype.case9 }}</ion-card-header>
+
+				<ion-card-content>
+					<ion-textarea placeholder="Un message clair et compact : Vous devez vous poser de nouveau ces questions pour être certain d’avoir bien identifié vos valeurs ajoutées et déni votre promesse : en quoi votre offre répond-elle efficacement aux besoins du marché? En quoi est-elle différente et meilleure que les autres?
+											   Votre proposition de valeur doit pouvoir être formulée en une phrase avec une accroche unique et inédite. Une proposition de valeur est une promesse de la valeur que vous êtes capable de délivrer. C’est la principale raison qui fait que vos prospects devraient dépenser chez vous plutôt que chez la concurrence. En une phrase, la proposition de valeur est une déclaration claire qui explique comment votre produit résout les problèmes des clients, améliore leur situation et fournit des avantages spécifques."[(ngModel)]="canva.case9"></ion-textarea>
+				</ion-card-content>
+			</ion-card>		
+		</ion-slide>
+		<ion-slide>
+			<p class="darkgrey-text padd-xs">Vous pouvez maintenant générer votre pdf, vous pourrez par la suite le partager</p>
+			<button color="primary" ion-button class="mybutton marg-top-s" (click)="createPDF()">Générer le pdf</button>
 		</ion-slide>
 	</ion-slides>
 </ion-content>

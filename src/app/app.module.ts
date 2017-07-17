@@ -7,9 +7,12 @@ import { HomePage } from '../pages/home/home';
 import { NewLeanCanvasPage } from '../pages/newleancanvas/newleancanvas';
 import { NewMvpCanvasPage } from '../pages/newmvpcanvas/newmvpcanvas';
 import { NewBmcPage } from '../pages/newbmc/newbmc';
+import { PdfPage } from '../pages/pdf/pdf';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
+import { DocumentViewer } from '@ionic-native/document-viewer';
+import { Extradata } from '../providers/extradata';
 
 @NgModule({
 	declarations: [
@@ -18,6 +21,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 		NewLeanCanvasPage,
 		NewMvpCanvasPage,
 		NewBmcPage,
+		PdfPage,
 	],
 	imports: [
 		BrowserModule,
@@ -30,11 +34,14 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 		NewLeanCanvasPage,
 		NewMvpCanvasPage,
 		NewBmcPage,
+		PdfPage
 	],
 	providers: [
 		StatusBar,
 		SplashScreen,
-		{provide: ErrorHandler, useClass: IonicErrorHandler}
+		DocumentViewer,
+		{provide: ErrorHandler, useClass: IonicErrorHandler},
+		Extradata
 	]
 })
 export class AppModule {}
