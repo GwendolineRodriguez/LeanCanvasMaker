@@ -7,6 +7,8 @@
 </ion-header>
 
 
-<ion-content text-center padding class="greybackground">
-
+<ion-content text-center padding>
+	<img *ngIf="show" [src]="pdf | safe: 'resourceUrl'"/>
+	<!--	<a href="mailto:someone@example.com?Subject=Canvas" target="_top">	</a>-->
+	<button color="primary" ion-button class="mybutton sendButton" (click)="sendEmail()">Envoyer par mail</button>
 </ion-content>

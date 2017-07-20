@@ -23,7 +23,7 @@ export class NewLeanCanvasPage {
 	}
 
 	ngAfterViewInit() {
-		this.slides.freeMode = true;
+		this.slides.freeModeSticky = true;
 	}
 
 	ionViewDidLoad() {
@@ -37,5 +37,4 @@ export class NewLeanCanvasPage {
 			canvatype: this.canvatype
 		});
 	}
-
 }

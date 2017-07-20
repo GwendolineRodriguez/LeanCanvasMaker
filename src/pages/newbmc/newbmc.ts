@@ -23,7 +23,7 @@ export class NewBmcPage {
 	}
 
 	ngAfterViewInit() {
-		this.slides.freeMode = true;
+		this.slides.freeModeSticky = true;
 	}
 
 	ionViewDidLoad() {

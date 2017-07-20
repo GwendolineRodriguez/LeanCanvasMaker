@@ -1,6 +1,8 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { ErrorHandler, NgModule } from '@angular/core';
 import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
+import { EmailComposer } from '@ionic-native/email-composer';
+//import { EmailComposer } from '../../plugins/cordova-plugin-email';
 
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
@@ -13,6 +15,7 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { DocumentViewer } from '@ionic-native/document-viewer';
 import { Extradata } from '../providers/extradata';
+import { SafePipe } from '../pipes/safe';
 
 @NgModule({
 	declarations: [
@@ -22,6 +25,7 @@ import { Extradata } from '../providers/extradata';
 		NewMvpCanvasPage,
 		NewBmcPage,
 		PdfPage,
+		SafePipe
 	],
 	imports: [
 		BrowserModule,
@@ -40,6 +44,7 @@ import { Extradata } from '../providers/extradata';
 		StatusBar,
 		SplashScreen,
 		DocumentViewer,
+		EmailComposer,
 		{provide: ErrorHandler, useClass: IonicErrorHandler},
 		Extradata
 	]

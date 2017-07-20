@@ -23,7 +23,7 @@ export class NewMvpCanvasPage {
 	}
 
 	ngAfterViewInit() {
-		this.slides.freeMode = true;
+		this.slides.freeModeSticky = true;
 	}
 
 	ionViewDidLoad() {

@@ -1,3 +1,11 @@
 page-pdf {
-
+	.sendButton {
+		position: absolute;
+		bottom: 16px !important;
+		left: 16px;
+	}
+	ion-content {
+		text-align: center;
+		position: relative !important;
+	}
 }
