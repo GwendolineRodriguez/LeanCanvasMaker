@@ -1,14 +1,15 @@
 import { Component, ViewChild } from '@angular/core';
 import { NavController, NavParams, Slides } from 'ionic-angular';
 import { PdfPage } from '../../pages/pdf/pdf';
-
+import { Keyboard } from '@ionic-native/keyboard';
+import { Extradata } from '../../providers/extradata';
 
 @Component({
-  selector: 'page-newbmc',
-  templateUrl: 'newbmc.html',
+	selector: 'page-newbmc',
+	templateUrl: 'newbmc.html',
 })
 export class NewBmcPage {
-@ViewChild(Slides) slides: Slides;
+	@ViewChild(Slides) slides: Slides;
 	title: any = '';
 	canva: any = {case1: '', case2: '', case3: '',
 				  case4: '', case5: '', case6: '',
@@ -19,11 +20,18 @@ export class NewBmcPage {
 		case4: 'Canaux', case5: 'Keys Metrics', case6: 'Unfair Advantage',
 		case7: 'Coûts', case8: 'Revenues', case9: 'Unique Value Proposition'};
 
-	constructor(public navCtrl: NavController, public navParams: NavParams) {
+	constructor(public navCtrl: NavController,
+				 public navParams: NavParams,
+				 public extradata: Extradata,
+				 private keyboard: Keyboard) {
 	}
 
 	ngAfterViewInit() {
 		this.slides.freeModeSticky = true;
+	}
+
+	slideChanged() {
+		this.keyboard.close();
 	}
 
 	ionViewDidLoad() {
