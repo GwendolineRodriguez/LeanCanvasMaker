@@ -1,13 +1,41 @@
 import { Injectable } from '@angular/core';
+import { LoadingController, ToastController } from 'ionic-angular';
 import 'rxjs/add/operator/map';
 
 @Injectable()
 export class Extradata {
 	pdf: any;
-
-	constructor() {
+	loading: any;
+	
+	constructor(public loadingCtrl: LoadingController,
+				 private toastCtrl: ToastController) {
 		console.log('Hello Extradata Provider');
 	}
+
+
+	showLoader(){
+		this.loading = this.loadingCtrl.create({
+			content: 'Chargement...'
+		});
+
+		this.loading.present();
+	}
+
+	presentToast(msg) {
+		let toast = this.toastCtrl.create({
+			message: msg,
+			duration: 3000,
+			position: 'bottom',
+			dismissOnPageChange: false
+		});
+
+		toast.onDidDismiss(() => {
+			console.log('Dismissed toast');
+		});
+
+		toast.present();
+	}
+
 
 	buildPdf(canva, title, canvatype) {
 		this.pdf = { 

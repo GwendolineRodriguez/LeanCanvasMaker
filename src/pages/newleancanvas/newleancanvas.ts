@@ -1,6 +1,8 @@
 import { Component, ViewChild } from '@angular/core';
 import { NavController, NavParams, Slides } from 'ionic-angular';
 import { PdfPage } from '../../pages/pdf/pdf';
+import { Keyboard } from '@ionic-native/keyboard';
+import { Extradata } from '../../providers/extradata';
 
 @Component({
 	selector: 'page-newleancanvas',
@@ -19,7 +21,10 @@ export class NewLeanCanvasPage {
 		case4: 'Canaux', case5: 'Keys Metrics', case6: 'Unfair Advantage',
 		case7: 'Coûts', case8: 'Revenues', case9: 'Unique Value Proposition'};
 
-	constructor(public navCtrl: NavController, public navParams: NavParams) {
+	constructor(public navCtrl: NavController,
+				 public navParams: NavParams,
+				 public extradata: Extradata,
+				 private keyboard: Keyboard) {
 	}
 
 	ngAfterViewInit() {
@@ -28,6 +33,10 @@ export class NewLeanCanvasPage {
 
 	ionViewDidLoad() {
 		console.log('ionViewDidLoad NewleancanvasPage');
+	}
+
+	slideChanged() {
+		this.keyboard.close();
 	}
 
 	createPDF() {

@@ -170,6 +170,12 @@ ion-input {
 	padding-right: 0.5em !important;
 }
 
+
+// to make keyboard retract correctly between slides.
+.input-cover {
+	position: static !important;
+}
+
 .swiper-pagination-bullets {
 	bottom: 20px !important;
 }

@@ -23,11 +23,23 @@
         "@ionic-native/core": "3.12.1",
         "@ionic-native/document-viewer": "^3.14.0",
         "@ionic-native/email-composer": "^4.0.1",
+        "@ionic-native/keyboard": "^4.1.0",
+        "@ionic-native/screen-orientation": "^4.1.0",
+        "@ionic-native/social-sharing": "^4.1.0",
         "@ionic-native/splash-screen": "3.12.1",
         "@ionic-native/status-bar": "3.12.1",
         "@ionic/storage": "2.0.1",
-        "cordova-plugin-email": "^1.2.6",
+        "cordova-ios": "^4.4.0",
+        "cordova-plugin-console": "1.0.5",
+        "cordova-plugin-device": "1.1.4",
+        "cordova-plugin-screen-orientation": "^2.0.1",
+        "cordova-plugin-splashscreen": "~4.0.1",
+        "cordova-plugin-statusbar": "2.2.2",
+        "cordova-plugin-whitelist": "1.3.1",
+        "cordova-plugin-x-socialsharing": "^5.1.8",
+        "es6-promise-plugin": "^4.1.0",
         "ionic-angular": "3.5.0",
+        "ionic-plugin-keyboard": "~2.2.1",
         "ionicons": "3.0.0",
         "rxjs": "5.4.0",
         "sw-toolbox": "3.6.0",
@@ -42,7 +54,17 @@
     "description": "An Ionic project",
     "cordova": {
         "plugins": {
-            "cordova-plugin-email": {}
-        }
+            "cordova-plugin-console": {},
+            "cordova-plugin-device": {},
+            "cordova-plugin-splashscreen": {},
+            "cordova-plugin-statusbar": {},
+            "cordova-plugin-whitelist": {},
+            "ionic-plugin-keyboard": {},
+            "cordova-plugin-x-socialsharing": {},
+            "cordova-plugin-screen-orientation": {}
+        },
+        "platforms": [
+            "ios"
+        ]
     }
 }
