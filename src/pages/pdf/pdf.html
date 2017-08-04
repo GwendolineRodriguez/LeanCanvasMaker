@@ -9,5 +9,6 @@
 
 <ion-content text-center padding>
 	<img *ngIf="show" [src]="pdf | safe: 'resourceUrl'"/>
+	<button color="primary" ion-button class="mybutton challengeButton" (click)="openForm()">Challenger</button>
 	<button color="primary" ion-button class="mybutton sendButton" (click)="sendEmail()">Envoyer par mail</button>
 </ion-content>

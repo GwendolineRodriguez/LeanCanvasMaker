@@ -1,9 +1,16 @@
 page-pdf {
-	.sendButton {
+	.challengeButton {
+		bottom: 16% !important;
 		position: absolute;
-		bottom: 16px !important;
 		left: 16px;
 	}
+
+	.sendButton {
+		position: absolute;
+		bottom: 3% !important;
+		left: 16px;
+	}
+
 	ion-content {
 		text-align: center;
 		position: relative !important;

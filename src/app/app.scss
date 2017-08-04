@@ -79,8 +79,12 @@
 	margin-top: 2%;
 }
 
+.marg-botton-xxs{
+	margin-bottom: 2%;
+}
+
 .marg-top-xs {
-	margin-top: 5%;
+	margin-top: 5% !important;
 }
 
 .marg-top-s {
@@ -153,7 +157,7 @@
 }
 
 ion-card {
-	height: 33em;
+	height: 65vh;
 }
 
 ion-textarea {
@@ -183,4 +187,40 @@ ion-input {
 .mybutton {
 	width: 90%;
 	height: 10%;
+}
+
+.modimgsize {
+	height: auto;
+	width: auto;
+}
+
+.addbutton {
+	background-color: #000 !important;
+	background: #000 !important;
+	height: 30px;
+}
+
+//.cardsarearow {
+//	width: 100%;
+//	height: 10%;
+//}
+
+.cardsarea {
+//	height: 15em !important;
+}
+
+ion-fab[top][edge] {
+	top: -14px;
+}
+
+.toolbar-ios-primary .toolbar-title-ios, .toolbar-ios-primary .bar-button-clear-ios, .toolbar-ios-primary .bar-button-default-ios {
+	color: white;
+}
+
+ion-icon {
+	color: white;
+}
+
+.button-ios-primary {
+	color: white;
 }

@@ -16,7 +16,7 @@
 
 				<ion-card-content>
 					<ion-textarea placeholder="Top 3 Problèmes
-											   Avant de poser votre idée sur le papier de façon désorganisée, veillez à avoir, au préalable, compris la problématique de vos clients en identifant les 3 problèmes les plus importants auxquels ils sont régulièrement exposés" [(ngModel)]="canva.case1">{{ canva.case1 }}</ion-textarea>
+											   Avant de poser votre idée sur le papier de façon désorganisée, veillez à avoir, au préalable, compris la problématique de vos clients en identifant les 3 problèmes les plus importants auxquels ils sont régulièrement exposés" [(ngModel)]="canva.case1"></ion-textarea>
 				</ion-card-content>
 
 			</ion-card>
@@ -25,11 +25,39 @@
 			<ion-input text-center placeholder="Nom du projet" [(ngModel)]="title"></ion-input>
 			<ion-card>
 				<ion-card-header>{{ canvatype.case2 }}</ion-card-header>
+				<!--
+<ion-card-header>
+<ion-grid>
+<ion-row>
+<ion-col></ion-col>
+<ion-col>
+{{ canvatype.case2 }}
+</ion-col>
+<ion-col></ion-col>
+<ion-col>
+<ion-fab top right edge><button ion-fab mini color="primary" (tap)="showCards()"><ion-icon name="add"></ion-icon></button></ion-fab>
+</ion-col>
+</ion-row>
+</ion-grid>
+</ion-card-header>
+-->
 
 				<ion-card-content>
-					<ion-textarea placeholder="Clients cibles, persona" [(ngModel)]="canva.case2"></ion-textarea>
+					<ion-textarea placeholder="Clients cibles, persona" [(ngModel)]="canva.case2" class="cardsarea"></ion-textarea>
+					<!--
+<ion-grid no-padding class="cardsarearow">
+<ion-row class="marg-bottom-xs">
+<ion-slides slidesPerView="3.5">
+<ion-slide *ngFor="let card of mvpCards.personaCardsSelection">
+<ion-col class="grid-col align-center">
+<img (click)="mvpCards.deleteCard(card, 'persona')" class="modimgsize" [src]=card>
+</ion-col>
+</ion-slide>
+</ion-slides>
+</ion-row>
+</ion-grid>
+-->
 				</ion-card-content>
-
 			</ion-card>		
 		</ion-slide>
 		<ion-slide>
@@ -48,10 +76,38 @@
 			<ion-card>
 				<ion-card-header>{{ canvatype.case4 }}</ion-card-header>
 
+
+				<!--
+<ion-card-header>
+<ion-grid>
+<ion-row>
+<ion-col></ion-col>
+<ion-col>
+{{ canvatype.case4 }}
+</ion-col>
+<ion-col></ion-col>
+<ion-col>
+<ion-fab top right edge><button ion-fab mini color="primary" (tap)="showCards()"><ion-icon name="add"></ion-icon></button></ion-fab>
+</ion-col>
+</ion-row>
+</ion-grid>			
+</ion-card-header>
+-->
+
 				<ion-card-content>
 					<ion-textarea placeholder="Vos moyens de communiquer avec vos clients" [(ngModel)]="canva.case4"></ion-textarea>
+					<ion-grid no-padding class="cardsarearow">
+						<ion-row class="marg-bottom-xs">
+							<ion-slides slidesPerView="3.5">
+								<ion-slide *ngFor="let card of channelCardsSelection">
+									<ion-col class="grid-col align-center">
+										<img (click)="mvpCards.deleteCard(card, 'channel')" class="modimgsize" [src]=card>
+									</ion-col>
+								</ion-slide>
+							</ion-slides>
+						</ion-row>
+					</ion-grid>
 				</ion-card-content>
-
 			</ion-card>		
 		</ion-slide>
 		<ion-slide>
@@ -59,8 +115,37 @@
 			<ion-card>
 				<ion-card-header>{{ canvatype.case5 }}</ion-card-header>
 
+
+				<!--
+<ion-card-header>
+<ion-grid>
+<ion-row>
+<ion-col></ion-col>
+<ion-col>
+{{ canvatype.case5 }}
+</ion-col>
+<ion-col></ion-col>
+<ion-col>
+<ion-fab top right edge><button ion-fab mini color="primary" (tap)="showCards()"><ion-icon name="add"></ion-icon></button></ion-fab>
+</ion-col>
+</ion-row>
+</ion-grid>				
+</ion-card-header>
+-->
+
 				<ion-card-content>
 					<ion-textarea placeholder="Vos activités clés à mesurer" [(ngModel)]="canva.case5"></ion-textarea>
+					<ion-grid no-padding class="cardsarearow">
+						<ion-row class="marg-bottom-xs">
+							<ion-slides slidesPerView="3.5">
+								<ion-slide *ngFor="let card of kpiCardsSelection">
+									<ion-col class="grid-col align-center">
+										<img (click)="mrvpCards.deleteCard(card, 'kpi')" class="modimgsize" [src]=card>
+									</ion-col>
+								</ion-slide>
+							</ion-slides>
+						</ion-row>
+					</ion-grid>
 				</ion-card-content>
 
 			</ion-card>		
@@ -116,3 +201,47 @@
 		</ion-slide>
 	</ion-slides>
 </ion-content>
+
+<!--
+<content-drawer *ngIf="mvpCards.persona" [options]="drawerOptions" class="baseabsolute defaultbackground">
+<ion-grid no-padding>
+<ion-row class="marg-top-xxs marg-bottom-xxs">
+<ion-slides slidesPerView="2.1">
+<ion-slide *ngFor="let card of mvpCards.personaCards">
+<ion-col class="grid-col align-center" col-2>
+<img (click)="addCard(card)" class="modimgsize" [src]=card>
+</ion-col>
+</ion-slide>
+</ion-slides>
+</ion-row>
+</ion-grid>
+</content-drawer>
+
+<content-drawer *ngIf="mvpCards.kpi" [options]="drawerOptions" class="baseabsolute defaultbackground">
+<ion-grid no-padding>
+<ion-row class="marg-top-xxs marg-bottom-xxs">
+<ion-slides slidesPerView="2.1">
+<ion-slide *ngFor="let card of mvpCards.kpiCards">
+<ion-col class="grid-col align-center" col-2>
+<img (click)="addCard(card)" class="modimgsize" [src]=card>
+</ion-col>
+</ion-slide>
+</ion-slides>
+</ion-row>
+</ion-grid>
+</content-drawer>
+
+<content-drawer *ngIf="mvpCards.channels" [options]="drawerOptions" class="baseabsolute defaultbackground">
+<ion-grid no-padding>
+<ion-row class="marg-top-xxs marg-bottom-xxs">
+<ion-slides slidesPerView="2.1">
+<ion-slide *ngFor="let card of mvpCards.channelCards">
+<ion-col class="grid-col align-center" col-2>
+<img (click)="addCard(card)" class="modimgsize" [src]=card>
+</ion-col>
+</ion-slide>
+</ion-slides>
+</ion-row>
+</ion-grid>
+</content-drawer>
+-->

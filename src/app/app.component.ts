@@ -10,7 +10,7 @@ import { HomePage } from '../pages/home/home';
 	templateUrl: 'app.html',
 })
 
-export class MyApp {
+export class LeanCanvasMaker {
 	@ViewChild(Nav) nav: Nav;
 
 	rootPage: any = HomePage;
@@ -36,7 +36,7 @@ export class MyApp {
 			// Here you can do any higher level native things you might need.
 			this.statusBar.styleDefault();
 			this.splashScreen.hide();
-			this.screenOrientation.lock(this.screenOrientation.ORIENTATIONS.PORTRAIT);
+//			this.screenOrientation.lock(this.screenOrientation.ORIENTATIONS.PORTRAIT);
 		});
 	}
 

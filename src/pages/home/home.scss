@@ -5,4 +5,13 @@ page-home {
 		margin-right: 5%;
 		margin-left: 5%;
 	}
+
+	.cards {
+		text-align: left;
+	}
+	ion-card {
+		display:block;
+		overflow:auto;
+		height: auto !important;
+	}
 }

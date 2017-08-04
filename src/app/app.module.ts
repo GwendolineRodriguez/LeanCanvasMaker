@@ -4,32 +4,38 @@ import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 import { ScreenOrientation } from '@ionic-native/screen-orientation';
 import { SocialSharing } from '@ionic-native/social-sharing';
 import { Keyboard } from '@ionic-native/keyboard';
+import { File } from '@ionic-native/file';
 
-import { MyApp } from './app.component';
+import { LeanCanvasMaker } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { NewLeanCanvasPage } from '../pages/newleancanvas/newleancanvas';
 import { NewMvpCanvasPage } from '../pages/newmvpcanvas/newmvpcanvas';
 import { NewBmcPage } from '../pages/newbmc/newbmc';
 import { PdfPage } from '../pages/pdf/pdf';
+import { CompanyForm } from '../pages/companyform/companyform';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { Extradata } from '../providers/extradata';
 import { SafePipe } from '../pipes/safe';
+import { ContentDrawer } from '../components/content-drawer/content-drawer';
+import { MvpCards } from '../providers/mvpcards';
 
 @NgModule({
 	declarations: [
-		MyApp,
+		LeanCanvasMaker,
 		HomePage,
 		NewLeanCanvasPage,
 		NewMvpCanvasPage,
 		NewBmcPage,
 		PdfPage,
-		SafePipe
+		CompanyForm,
+		SafePipe,
+		ContentDrawer
 	],
 	imports: [
 		BrowserModule,
-		IonicModule.forRoot(MyApp, {
+		IonicModule.forRoot(LeanCanvasMaker, {
 			config: {
 				// These options are available in ionic-angular@2.0.0-beta.2 and up.
 				scrollAssist: false,    // Valid options appear to be [true, false]
@@ -39,12 +45,13 @@ import { SafePipe } from '../pipes/safe';
 	],
 	bootstrap: [IonicApp],
 	entryComponents: [
-		MyApp,
+		LeanCanvasMaker,
 		HomePage,
 		NewLeanCanvasPage,
 		NewMvpCanvasPage,
 		NewBmcPage,
-		PdfPage
+		PdfPage,
+		CompanyForm
 	],
 	providers: [
 		Keyboard,
@@ -52,8 +59,10 @@ import { SafePipe } from '../pipes/safe';
 		SplashScreen,
 		ScreenOrientation,
 		SocialSharing,
+		File,
 		{provide: ErrorHandler, useClass: IonicErrorHandler},
-		Extradata
+		Extradata,
+		MvpCards
 	]
 })
 export class AppModule {}

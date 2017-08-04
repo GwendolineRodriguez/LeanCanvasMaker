@@ -1,7 +1,8 @@
 import { Component } from '@angular/core';
-import { NavController, NavParams } from 'ionic-angular';
+import { NavController, NavParams, ModalController } from 'ionic-angular';
 import * as pdfmake from 'pdfmake/build/pdfmake';
 import { Extradata } from '../../providers/extradata';
+import { CompanyForm } from '../companyform/companyform';
 import { SocialSharing } from '@ionic-native/social-sharing';
 import { SafeResourceUrl, DomSanitizer } from '@angular/platform-browser';
 
@@ -25,6 +26,7 @@ export class PdfPage {
 				 private socialSharing: SocialSharing,
 				 public navParams: NavParams,
 				 public extradata: Extradata,
+				 public modalCtrl: ModalController,
 				 public sanitizer: DomSanitizer) {
 		var self = this;
 		this.docDefinition = extradata.buildPdf(navParams.get('canva'), navParams.get('title'), navParams.get('canvatype'))
@@ -51,6 +53,27 @@ export class PdfPage {
 		}).catch((e) => {
 			console.log('fail!')
 			console.log(e);
+		});
+	}
+
+	openForm() {
+		let profileModal = this.modalCtrl.create(CompanyForm, { userId: 8675309 });
+		profileModal.present();
+		profileModal.onDidDismiss(data => {
+			if (data) {
+				this.socialSharing.canShareViaEmail().then(() => {
+					console.log('success');
+				}).catch(() => {
+					this.extradata.presentToast('Un problème est survenu');
+				});
+
+				this.socialSharing.shareViaEmail(data, 'Lean Canvas by 12MVP', ['fred@12mvp.com'], null, null, [this.attachment]).then(() => {
+					console.log('success');
+				}).catch((e) => {
+					console.log('fail!')
+					console.log(e);
+				});
+			}
 		});
 	}
 
