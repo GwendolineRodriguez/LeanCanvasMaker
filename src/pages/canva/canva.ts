@@ -1,5 +1,5 @@
 import { Component, ViewChild } from '@angular/core';
-import { NavController, NavParams, Slides, Platform } from 'ionic-angular';
+import { Navbar, NavController, NavParams, AlertController, Slides, Platform } from 'ionic-angular';
 import { PdfPage } from '../../pages/pdf/pdf';
 import { Keyboard } from '@ionic-native/keyboard';
 import { Extradata } from '../../providers/extradata';
@@ -15,6 +15,7 @@ import { InfoPage } from '../../pages/info/info';
 export class CanvaPage {
 	//	@ViewChild(ContentDrawer) contentDrawer : ContentDrawer;
 	@ViewChild(Slides) slides: Slides;
+	@ViewChild(Navbar) navBar: Navbar;
 	canvatype: any;
 	drawerOptions: any;
 	title: any = '';
@@ -24,6 +25,7 @@ export class CanvaPage {
 
 	constructor(public navCtrl: NavController,
 				 public navParams: NavParams,
+				 private alertController: AlertController,
 				 public extradata: Extradata,
 				 public canvadata: Canvadata,
 				 public mvpCards: MvpCards,
@@ -32,7 +34,7 @@ export class CanvaPage {
 		this.canvatype = this.navParams.get('type');
 		console.log('canva : '+this.canvatype);
 		this.canvadata.initData(this.canvatype);
-		
+
 		//		this.drawerOptions = {
 		//			handleHeight: 0,
 		//			thresholdFromBottom: (this.platform.height()*0.61),
@@ -47,6 +49,32 @@ export class CanvaPage {
 		//					console.log(this.mvpCards.personaCards[i]);
 		//				}
 		//			}
+	}
+
+	ionViewDidLoad() {
+		this.setBackButtonAction()
+	}
+
+	setBackButtonAction(){
+		this.navBar.backButtonClick = () => {
+			let alert = this.alertController.create({
+				title: 'Attention',
+				subTitle: 'En revenant sur l\'accueil, vous perdez les données de ce canvas',
+				buttons: [
+					{
+						text: 'Annuler',
+						role: 'cancel',
+					},
+					{
+						text: 'Ok',
+						handler: () => {
+							this.navCtrl.pop()
+						}
+					}
+				]
+			});
+			alert.present();
+		}
 	}
 
 	ngAfterViewInit() {
@@ -91,5 +119,4 @@ export class CanvaPage {
 			type: this.canvatype
 		});
 	}
-
 }

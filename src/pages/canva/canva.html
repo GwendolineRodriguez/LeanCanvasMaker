@@ -15,17 +15,16 @@
 	<ion-slides pager="true" ion-fixed (ionSlideDidChange)="slideChanged()">
 		<ion-slide>
 			<ion-input text-center placeholder="Nom du projet" [(ngModel)]="title"></ion-input>
+		</ion-slide>
+		<ion-slide>
 			<ion-card>
 				<ion-card-header>{{ canvadata.canva.case1 }}</ion-card-header>
-
 				<ion-card-content>
 					<ion-textarea placeholder='{{ canvadata.placeholder.case1 }}' [(ngModel)]="canva.case1"></ion-textarea>
 				</ion-card-content>
-
 			</ion-card>
 		</ion-slide>
 		<ion-slide>
-			<ion-input text-center placeholder="Nom du projet" [(ngModel)]="title"></ion-input>
 			<ion-card>
 				<ion-card-header>{{ canvadata.canva.case2 }}</ion-card-header>
 				<!--
@@ -64,7 +63,6 @@
 			</ion-card>		
 		</ion-slide>
 		<ion-slide>
-			<ion-input text-center placeholder="Nom du projet" [(ngModel)]="title"></ion-input>
 			<ion-card>
 				<ion-card-header>{{ canvadata.canva.case3 }}</ion-card-header>
 
@@ -75,7 +73,6 @@
 			</ion-card>		
 		</ion-slide>
 		<ion-slide>
-			<ion-input text-center placeholder="Nom du projet" [(ngModel)]="title"></ion-input>
 			<ion-card>
 				<ion-card-header>{{ canvadata.canva.case4 }}</ion-card-header>
 
@@ -116,7 +113,6 @@
 			</ion-card>		
 		</ion-slide>
 		<ion-slide>
-			<ion-input text-center placeholder="Nom du projet" [(ngModel)]="title"></ion-input>
 			<ion-card>
 				<ion-card-header>{{ canvadata.canva.case5 }}</ion-card-header>
 
@@ -158,7 +154,6 @@
 			</ion-card>		
 		</ion-slide>
 		<ion-slide>
-			<ion-input text-center placeholder="Nom du projet" [(ngModel)]="title"></ion-input>
 			<ion-card>
 				<ion-card-header>{{ canvadata.canva.case6 }}</ion-card-header>
 
@@ -169,7 +164,6 @@
 			</ion-card>		
 		</ion-slide>
 		<ion-slide>
-			<ion-input text-center placeholder="Nom du projet" [(ngModel)]="title"></ion-input>
 			<ion-card>
 				<ion-card-header>{{ canvadata.canva.case7 }}</ion-card-header>
 
@@ -180,7 +174,6 @@
 			</ion-card>		
 		</ion-slide>
 		<ion-slide>
-			<ion-input text-center placeholder="Nom du projet" [(ngModel)]="title"></ion-input>
 			<ion-card>
 				<ion-card-header>{{ canvadata.canva.case8 }}</ion-card-header>
 
@@ -191,18 +184,14 @@
 			</ion-card>		
 		</ion-slide>
 		<ion-slide>
-			<ion-input text-center placeholder="Nom du projet" [(ngModel)]="title"></ion-input>
 			<ion-card>
 				<ion-card-header>{{ canvadata.canva.case9 }}</ion-card-header>
 
 				<ion-card-content>
 					<ion-textarea placeholder="{{ canvadata.placeholder.case9 }}" [(ngModel)]="canva.case9"></ion-textarea>
 				</ion-card-content>
-			</ion-card>		
-		</ion-slide>
-		<ion-slide>
-			<p class="darkgrey-text padd-xs">Vous pouvez maintenant générer votre pdf, vous pourrez par la suite le partager</p>
-			<button color="primary" ion-button class="marg-top-s" (click)="createPDF()">Générer le pdf</button>
+			</ion-card>
+			<button color="primary" ion-button class="" (click)="createPDF()">Générer le pdf</button>	
 		</ion-slide>
 	</ion-slides>
 </ion-content>
