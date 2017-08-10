@@ -3,21 +3,15 @@
 		<!--
 <button ion-button menuToggle>
 <ion-icon name="menu"></ion-icon>
+// will be able to choose above canvas precedently registered
 </button>
 -->
 		<ion-title>12MVP Canvas Maker</ion-title>
-		<!--
-<ion-buttons end>
-<button ion-button (click)="addFeed()" class="header-buttons righ-icon">
-<ion-icon name="add"></ion-icon>
-</button>
-</ion-buttons>
--->
 	</ion-navbar>
 </ion-header>
 
 <ion-content padding text-center class="greybackground">
-	<ion-card (click)="createLeanCanvas()" class="marg-top-xs">
+	<ion-card (click)="createCanva('lean')" class="marg-top-xs">
 		<img src="assets/canvasType/lean.png"/>
 		<ion-card-content class="cards">
 			<ion-card-title>
@@ -28,7 +22,7 @@
 			</p>
 		</ion-card-content>
 	</ion-card>
-	<ion-card (click)="createBMC()" class="marg-top-xs">
+	<ion-card (click)="createCanva('bmc')" class="marg-top-xs">
 		<img src="assets/canvasType/bmc.png"/>
 		<ion-card-content class="cards">
 			<ion-card-title>
@@ -39,7 +33,7 @@
 			</p>
 		</ion-card-content>
 	</ion-card>
-	<ion-card (click)="createMVPCanvas()" class="marg-top-xs">
+	<ion-card (click)="createCanva('mvp')" class="marg-top-xs">
 		<img src="assets/canvasType/mvpcanva.png"/>
 		<ion-card-content class="cards">
 			<ion-card-title>

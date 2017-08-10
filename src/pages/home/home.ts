@@ -1,8 +1,6 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
-import { NewLeanCanvasPage } from '../../pages/newleancanvas/newleancanvas';
-import { NewMvpCanvasPage } from '../../pages/newmvpcanvas/newmvpcanvas';
-import { NewBmcPage } from '../../pages/newbmc/newbmc';
+import { CanvaPage } from '../../pages/canva/canva';
 
 @Component({
 	selector: 'page-home',
@@ -10,19 +8,11 @@ import { NewBmcPage } from '../../pages/newbmc/newbmc';
 })
 export class HomePage {
 
-	constructor(public navCtrl: NavController) {
+	constructor(public navCtrl: NavController) {}
 
-	}
-
-	createLeanCanvas() {
-		this.navCtrl.push(NewLeanCanvasPage);
-	}
-
-	createMVPCanvas() {
-		this.navCtrl.push(NewMvpCanvasPage);	
-	}
-
-	createBMC() {
-		this.navCtrl.push(NewBmcPage);
+	createCanva(canvatype) {
+		this.navCtrl.push(CanvaPage, {
+			type: canvatype
+		});
 	}
 }

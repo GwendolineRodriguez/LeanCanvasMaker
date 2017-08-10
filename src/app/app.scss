@@ -152,8 +152,8 @@
 	margin: 0% 50% 0% 0%;
 }
 
-.righ-icon {
-	padding-right: 30% !important;
+.right-icon {
+	padding-right: 2vh !important;
 }
 
 ion-card {
@@ -161,7 +161,7 @@ ion-card {
 }
 
 ion-textarea {
-	height: 26em !important;
+	height: 50vh !important;
 	margin-left: 0.5em;
 }
 
@@ -206,7 +206,7 @@ ion-input {
 //}
 
 .cardsarea {
-//	height: 15em !important;
+	//	height: 15em !important;
 }
 
 ion-fab[top][edge] {
@@ -224,3 +224,8 @@ ion-icon {
 .button-ios-primary {
 	color: white;
 }
+//
+//.swiper-pagination-bullet {
+//	height: 16px !important;
+//	width: 16px !important;
+//}

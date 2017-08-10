@@ -63,15 +63,14 @@ export class PdfPage {
 			if (data) {
 				this.socialSharing.canShareViaEmail().then(() => {
 					console.log('success');
+					this.socialSharing.shareViaEmail(data, 'Lean Canvas by 12MVP', ['fred@12mvp.com'], null, null, [this.attachment]).then(() => {
+						console.log('success');
+					}).catch((e) => {
+						console.log('fail!')
+						console.log(e);
+					});
 				}).catch(() => {
-					this.extradata.presentToast('Un problème est survenu');
-				});
-
-				this.socialSharing.shareViaEmail(data, 'Lean Canvas by 12MVP', ['fred@12mvp.com'], null, null, [this.attachment]).then(() => {
-					console.log('success');
-				}).catch((e) => {
-					console.log('fail!')
-					console.log(e);
+					this.extradata.presentToast('Vérifiez que vous avez un compte mail actif sur ce téléphone.');
 				});
 			}
 		});

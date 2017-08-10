@@ -15,12 +15,12 @@ page-companyform {
 	}
 
 	ion-input {
-		color: #32db64 !important;
+		color: color($colors, primary, base) !important;
 	}
 
 	.closebutton {
-		background-color: #32db64 !important;
-		background: #32db64 !important;
+		background-color: color($colors, primary, base) !important;
+		background: color($colors, primary, base) !important;
 		height: 30px;
 	}
 	

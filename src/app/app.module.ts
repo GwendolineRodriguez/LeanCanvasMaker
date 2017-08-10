@@ -8,15 +8,16 @@ import { File } from '@ionic-native/file';
 
 import { LeanCanvasMaker } from './app.component';
 import { HomePage } from '../pages/home/home';
-import { NewLeanCanvasPage } from '../pages/newleancanvas/newleancanvas';
-import { NewMvpCanvasPage } from '../pages/newmvpcanvas/newmvpcanvas';
-import { NewBmcPage } from '../pages/newbmc/newbmc';
+import { CanvaPage } from '../pages/canva/canva';
 import { PdfPage } from '../pages/pdf/pdf';
 import { CompanyForm } from '../pages/companyform/companyform';
+import { InfoPage } from '../pages/info/info';
+
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { Extradata } from '../providers/extradata';
+import { Canvadata } from '../providers/canvadata';
 import { SafePipe } from '../pipes/safe';
 import { ContentDrawer } from '../components/content-drawer/content-drawer';
 import { MvpCards } from '../providers/mvpcards';
@@ -25,10 +26,9 @@ import { MvpCards } from '../providers/mvpcards';
 	declarations: [
 		LeanCanvasMaker,
 		HomePage,
-		NewLeanCanvasPage,
-		NewMvpCanvasPage,
-		NewBmcPage,
+		CanvaPage,
 		PdfPage,
+		InfoPage,
 		CompanyForm,
 		SafePipe,
 		ContentDrawer
@@ -47,10 +47,9 @@ import { MvpCards } from '../providers/mvpcards';
 	entryComponents: [
 		LeanCanvasMaker,
 		HomePage,
-		NewLeanCanvasPage,
-		NewMvpCanvasPage,
-		NewBmcPage,
+		CanvaPage,
 		PdfPage,
+		InfoPage,
 		CompanyForm
 	],
 	providers: [
@@ -62,6 +61,7 @@ import { MvpCards } from '../providers/mvpcards';
 		File,
 		{provide: ErrorHandler, useClass: IonicErrorHandler},
 		Extradata,
+		Canvadata,
 		MvpCards
 	]
 })

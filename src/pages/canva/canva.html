@@ -1,9 +1,13 @@
 <ion-header no-border>
 
 	<ion-navbar color="primary">
-		<ion-title>Lean Canvas</ion-title>
+		<ion-title>{{ canvadata.canva.title }}</ion-title>
+		<ion-buttons end>
+			<button ion-button icon-only (click)="info()" class="right-icon">
+				<ion-icon name="information"></ion-icon>
+			</button>
+		</ion-buttons>
 	</ion-navbar>
-
 </ion-header>
 
 
@@ -12,11 +16,10 @@
 		<ion-slide>
 			<ion-input text-center placeholder="Nom du projet" [(ngModel)]="title"></ion-input>
 			<ion-card>
-				<ion-card-header>{{ canvatype.case1 }}</ion-card-header>
+				<ion-card-header>{{ canvadata.canva.case1 }}</ion-card-header>
 
 				<ion-card-content>
-					<ion-textarea placeholder="Top 3 Problèmes
-											   Avant de poser votre idée sur le papier de façon désorganisée, veillez à avoir, au préalable, compris la problématique de vos clients en identifant les 3 problèmes les plus importants auxquels ils sont régulièrement exposés" [(ngModel)]="canva.case1"></ion-textarea>
+					<ion-textarea placeholder='{{ canvadata.placeholder.case1 }}' [(ngModel)]="canva.case1"></ion-textarea>
 				</ion-card-content>
 
 			</ion-card>
@@ -24,7 +27,7 @@
 		<ion-slide>
 			<ion-input text-center placeholder="Nom du projet" [(ngModel)]="title"></ion-input>
 			<ion-card>
-				<ion-card-header>{{ canvatype.case2 }}</ion-card-header>
+				<ion-card-header>{{ canvadata.canva.case2 }}</ion-card-header>
 				<!--
 <ion-card-header>
 <ion-grid>
@@ -43,7 +46,7 @@
 -->
 
 				<ion-card-content>
-					<ion-textarea placeholder="Clients cibles, persona" [(ngModel)]="canva.case2" class="cardsarea"></ion-textarea>
+					<ion-textarea placeholder="{{ canvadata.placeholder.case2 }}" [(ngModel)]="canva.case2" class="cardsarea"></ion-textarea>
 					<!--
 <ion-grid no-padding class="cardsarearow">
 <ion-row class="marg-bottom-xs">
@@ -63,10 +66,10 @@
 		<ion-slide>
 			<ion-input text-center placeholder="Nom du projet" [(ngModel)]="title"></ion-input>
 			<ion-card>
-				<ion-card-header>{{ canvatype.case3 }}</ion-card-header>
+				<ion-card-header>{{ canvadata.canva.case3 }}</ion-card-header>
 
 				<ion-card-content>
-					<ion-textarea placeholder="Top 3 Solutions" [(ngModel)]="canva.case3"></ion-textarea>
+					<ion-textarea placeholder="{{ canvadata.placeholder.case3 }}" [(ngModel)]="canva.case3"></ion-textarea>
 				</ion-card-content>
 
 			</ion-card>		
@@ -74,7 +77,7 @@
 		<ion-slide>
 			<ion-input text-center placeholder="Nom du projet" [(ngModel)]="title"></ion-input>
 			<ion-card>
-				<ion-card-header>{{ canvatype.case4 }}</ion-card-header>
+				<ion-card-header>{{ canvadata.canva.case4 }}</ion-card-header>
 
 
 				<!--
@@ -95,25 +98,27 @@
 -->
 
 				<ion-card-content>
-					<ion-textarea placeholder="Vos moyens de communiquer avec vos clients" [(ngModel)]="canva.case4"></ion-textarea>
-					<ion-grid no-padding class="cardsarearow">
-						<ion-row class="marg-bottom-xs">
-							<ion-slides slidesPerView="3.5">
-								<ion-slide *ngFor="let card of channelCardsSelection">
-									<ion-col class="grid-col align-center">
-										<img (click)="mvpCards.deleteCard(card, 'channel')" class="modimgsize" [src]=card>
-									</ion-col>
-								</ion-slide>
-							</ion-slides>
-						</ion-row>
-					</ion-grid>
+					<ion-textarea placeholder="{{ canvadata.placeholder.case4 }}" [(ngModel)]="canva.case4"></ion-textarea>
+					<!--
+<ion-grid no-padding class="cardsarearow">
+<ion-row class="marg-bottom-xs">
+<ion-slides slidesPerView="3.5">
+<ion-slide *ngFor="let card of channelCardsSelection">
+<ion-col class="grid-col align-center">
+<img (click)="mvpCards.deleteCard(card, 'channel')" class="modimgsize" [src]=card>
+</ion-col>
+</ion-slide>
+</ion-slides>
+</ion-row>
+</ion-grid>
+-->
 				</ion-card-content>
 			</ion-card>		
 		</ion-slide>
 		<ion-slide>
 			<ion-input text-center placeholder="Nom du projet" [(ngModel)]="title"></ion-input>
 			<ion-card>
-				<ion-card-header>{{ canvatype.case5 }}</ion-card-header>
+				<ion-card-header>{{ canvadata.canva.case5 }}</ion-card-header>
 
 
 				<!--
@@ -134,18 +139,20 @@
 -->
 
 				<ion-card-content>
-					<ion-textarea placeholder="Vos activités clés à mesurer" [(ngModel)]="canva.case5"></ion-textarea>
-					<ion-grid no-padding class="cardsarearow">
-						<ion-row class="marg-bottom-xs">
-							<ion-slides slidesPerView="3.5">
-								<ion-slide *ngFor="let card of kpiCardsSelection">
-									<ion-col class="grid-col align-center">
-										<img (click)="mrvpCards.deleteCard(card, 'kpi')" class="modimgsize" [src]=card>
-									</ion-col>
-								</ion-slide>
-							</ion-slides>
-						</ion-row>
-					</ion-grid>
+					<ion-textarea placeholder="{{ canvadata.placeholder.case5 }}" [(ngModel)]="canva.case5"></ion-textarea>
+					<!--
+<ion-grid no-padding class="cardsarearow">
+<ion-row class="marg-bottom-xs">
+<ion-slides slidesPerView="3.5">
+<ion-slide *ngFor="let card of kpiCardsSelection">
+<ion-col class="grid-col align-center">
+<img (click)="mrvpCards.deleteCard(card, 'kpi')" class="modimgsize" [src]=card>
+</ion-col>
+</ion-slide>
+</ion-slides>
+</ion-row>
+</ion-grid>
+-->
 				</ion-card-content>
 
 			</ion-card>		
@@ -153,10 +160,10 @@
 		<ion-slide>
 			<ion-input text-center placeholder="Nom du projet" [(ngModel)]="title"></ion-input>
 			<ion-card>
-				<ion-card-header>{{ canvatype.case6 }}</ion-card-header>
+				<ion-card-header>{{ canvadata.canva.case6 }}</ion-card-header>
 
 				<ion-card-content>
-					<ion-textarea placeholder="Ne peux être facilement acheté ou copié" [(ngModel)]="canva.case6"></ion-textarea>
+					<ion-textarea placeholder="{{ canvadata.placeholder.case6 }}" [(ngModel)]="canva.case6"></ion-textarea>
 				</ion-card-content>
 
 			</ion-card>		
@@ -164,10 +171,10 @@
 		<ion-slide>
 			<ion-input text-center placeholder="Nom du projet" [(ngModel)]="title"></ion-input>
 			<ion-card>
-				<ion-card-header>{{ canvatype.case7 }}</ion-card-header>
+				<ion-card-header>{{ canvadata.canva.case7 }}</ion-card-header>
 
 				<ion-card-content>
-					<ion-textarea placeholder="Vos coûts de structure (salaires, loyers, serveurs,...) et vos coûts d'acquisitions (publicité, stand sur les salons, SEO, etc...)" [(ngModel)]="canva.case7"></ion-textarea>
+					<ion-textarea placeholder="{{ canvadata.placeholder.case7 }}" [(ngModel)]="canva.case7"></ion-textarea>
 				</ion-card-content>
 
 			</ion-card>		
@@ -175,11 +182,10 @@
 		<ion-slide>
 			<ion-input text-center placeholder="Nom du projet" [(ngModel)]="title"></ion-input>
 			<ion-card>
-				<ion-card-header>{{ canvatype.case8 }}</ion-card-header>
+				<ion-card-header>{{ canvadata.canva.case8 }}</ion-card-header>
 
 				<ion-card-content>
-					<ion-textarea placeholder="Comment vous gagnez de l'argent ?
-											   Qui sont vos acheteurs ?" [(ngModel)]="canva.case8"></ion-textarea>
+					<ion-textarea placeholder="{{ canvadata.placeholder.case8 }}" [(ngModel)]="canva.case8"></ion-textarea>
 				</ion-card-content>
 
 			</ion-card>		
@@ -187,11 +193,10 @@
 		<ion-slide>
 			<ion-input text-center placeholder="Nom du projet" [(ngModel)]="title"></ion-input>
 			<ion-card>
-				<ion-card-header>{{ canvatype.case9 }}</ion-card-header>
+				<ion-card-header>{{ canvadata.canva.case9 }}</ion-card-header>
 
 				<ion-card-content>
-					<ion-textarea placeholder="Un message clair et compact : Vous devez vous poser de nouveau ces questions pour être certain d’avoir bien identifié vos valeurs ajoutées et déni votre promesse : en quoi votre offre répond-elle efficacement aux besoins du marché? En quoi est-elle différente et meilleure que les autres?
-											   Votre proposition de valeur doit pouvoir être formulée en une phrase avec une accroche unique et inédite. Une proposition de valeur est une promesse de la valeur que vous êtes capable de délivrer. C’est la principale raison qui fait que vos prospects devraient dépenser chez vous plutôt que chez la concurrence. En une phrase, la proposition de valeur est une déclaration claire qui explique comment votre produit résout les problèmes des clients, améliore leur situation et fournit des avantages spécifques."[(ngModel)]="canva.case9"></ion-textarea>
+					<ion-textarea placeholder="{{ canvadata.placeholder.case9 }}" [(ngModel)]="canva.case9"></ion-textarea>
 				</ion-card-content>
 			</ion-card>		
 		</ion-slide>
