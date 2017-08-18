@@ -32,7 +32,6 @@ export class CanvaPage {
 				 public platform: Platform,
 				 private keyboard: Keyboard) {
 		this.canvatype = this.navParams.get('type');
-		console.log('canva : '+this.canvatype);
 		this.canvadata.initData(this.canvatype);
 
 		//		this.drawerOptions = {
@@ -110,7 +109,7 @@ export class CanvaPage {
 		this.navCtrl.push(PdfPage, {
 			canva: this.canva,
 			title: this.title,
-			canvatype: this.canvatype
+			canvatype: this.canvadata.canva
 		});
 	}
 
@@ -118,5 +117,9 @@ export class CanvaPage {
 		this.navCtrl.push(InfoPage, {
 			type: this.canvatype
 		});
+	}
+	
+	goToNextSlide() {
+		this.slides.slideNext();
 	}
 }

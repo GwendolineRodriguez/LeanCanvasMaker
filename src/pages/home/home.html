@@ -6,42 +6,48 @@
 // will be able to choose above canvas precedently registered
 </button>
 -->
-		<ion-title>12MVP Canvas Maker</ion-title>
+		<ion-title>Canvas Maker</ion-title>
 	</ion-navbar>
 </ion-header>
 
-<ion-content padding text-center class="greybackground">
-	<ion-card (click)="createCanva('lean')" class="marg-top-xs">
-		<img src="assets/canvasType/lean.png"/>
-		<ion-card-content class="cards">
-			<ion-card-title>
-				Lean Canvas
-			</ion-card-title>
-			<p>
-				Il vous permettra de tester les hypothèses liées au business model en accord avec les principes du lean startup, selon Ash Maurya.
-			</p>
-		</ion-card-content>
-	</ion-card>
-	<ion-card (click)="createCanva('bmc')" class="marg-top-xs">
-		<img src="assets/canvasType/bmc.png"/>
-		<ion-card-content class="cards">
-			<ion-card-title>
-				Business Model Canvas
-			</ion-card-title>
-			<p>
-				Il permet de dresser un état des lieux du modèle économique d’une entreprise.
-			</p>
-		</ion-card-content>
-	</ion-card>
-	<ion-card (click)="createCanva('mvp')" class="marg-top-xs">
-		<img src="assets/canvasType/mvpcanva.png"/>
-		<ion-card-content class="cards">
-			<ion-card-title>
-				MVP Canvas
-			</ion-card-title>
-			<p>
-				Adapté du lean canvas par 12MVP au service de grands groupes, il permet de tester une idée d'innovation en interne à l'entreprise.
-			</p>
-		</ion-card-content>
-	</ion-card>
+<ion-content padding text-center class="defaultbackground">
+	<button class="defaultbackground">
+		<ion-card (tap)="createCanva('lean')" class="marg-top-xs">
+			<img src="assets/canvasType/lean.png"/>
+			<ion-card-content class="cards">
+				<ion-card-title>
+					Lean Canvas
+				</ion-card-title>
+				<p>
+					Il vous permettra de tester les hypothèses liées au business model en accord avec les principes du lean startup, selon Ash Maurya.
+				</p>
+			</ion-card-content>
+		</ion-card>
+	</button>
+	<button class="defaultbackground">
+		<ion-card (tap)="createCanva('bmc')" class="marg-top-xs">
+			<img src="assets/canvasType/bmc.png"/>
+			<ion-card-content class="cards">
+				<ion-card-title>
+					Business Model Canvas
+				</ion-card-title>
+				<p>
+					Il permet de dresser un état des lieux du modèle économique d’une entreprise.
+				</p>
+			</ion-card-content>
+		</ion-card>
+	</button>
+	<button class="defaultbackground">
+		<ion-card (tap)="createCanva('mvp')" class="marg-top-xs">
+			<img src="assets/canvasType/mvpcanva.png"/>
+			<ion-card-content class="cards">
+				<ion-card-title>
+					MVP Canvas
+				</ion-card-title>
+				<p>
+					Adapté du lean canvas par 12MVP au service de grands groupes, il permet de tester une idée d'innovation en interne à l'entreprise.
+				</p>
+			</ion-card-content>
+		</ion-card>
+	</button>
 </ion-content>

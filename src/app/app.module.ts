@@ -13,7 +13,6 @@ import { PdfPage } from '../pages/pdf/pdf';
 import { CompanyForm } from '../pages/companyform/companyform';
 import { InfoPage } from '../pages/info/info';
 
-
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { Extradata } from '../providers/extradata';

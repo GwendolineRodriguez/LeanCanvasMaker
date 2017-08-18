@@ -4,7 +4,7 @@
 		<ion-title>{{ canvadata.canva.title }}</ion-title>
 		<ion-buttons end>
 			<button ion-button icon-only (click)="info()" class="right-icon">
-				<ion-icon name="information"></ion-icon>
+				<ion-icon name="information-circle"></ion-icon>
 			</button>
 		</ion-buttons>
 	</ion-navbar>
@@ -14,7 +14,9 @@
 <ion-content padding text-center class="greybackground">
 	<ion-slides pager="true" ion-fixed (ionSlideDidChange)="slideChanged()">
 		<ion-slide>
+			<p>Quel le nom de votre projet :</p>
 			<ion-input text-center placeholder="Nom du projet" [(ngModel)]="title"></ion-input>
+			<button color="primary" ion-button class="marg-top-xs" (click)="slides.slideNext()()">Enregistrer</button>	
 		</ion-slide>
 		<ion-slide>
 			<ion-card>
@@ -191,7 +193,9 @@
 					<ion-textarea placeholder="{{ canvadata.placeholder.case9 }}" [(ngModel)]="canva.case9"></ion-textarea>
 				</ion-card-content>
 			</ion-card>
-			<button color="primary" ion-button class="" (click)="createPDF()">Générer le pdf</button>	
+			<ion-fab right bottom>
+				<button ion-fab color="primary" (click)="createPDF()"><ion-icon name="arrow-dropright"></ion-icon></button>
+			</ion-fab>
 		</ion-slide>
 	</ion-slides>
 </ion-content>
