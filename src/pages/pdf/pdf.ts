@@ -2,7 +2,6 @@ import { Component } from '@angular/core';
 import { NavController, NavParams, ModalController } from 'ionic-angular';
 import * as pdfmake from 'pdfmake/build/pdfmake';
 import { Extradata } from '../../providers/extradata';
-import { CompanyForm } from '../companyform/companyform';
 import { SocialSharing } from '@ionic-native/social-sharing';
 import { SafeResourceUrl, DomSanitizer } from '@angular/platform-browser';
 
@@ -53,26 +52,6 @@ export class PdfPage {
 		}).catch((e) => {
 			console.log('fail!')
 			console.log(e);
-		});
-	}
-
-	openForm() {
-		let profileModal = this.modalCtrl.create(CompanyForm, { userId: 8675309 });
-		profileModal.present();
-		profileModal.onDidDismiss(data => {
-			if (data) {
-				this.socialSharing.canShareViaEmail().then(() => {
-					console.log('success');
-					this.socialSharing.shareViaEmail(data, 'Lean Canvas by 12MVP', ['fred@12mvp.com'], null, null, [this.attachment]).then(() => {
-						console.log('success');
-					}).catch((e) => {
-						console.log('fail!')
-						console.log(e);
-					});
-				}).catch(() => {
-					this.extradata.presentToast('Vérifiez que vous avez un compte mail actif sur ce téléphone.');
-				});
-			}
 		});
 	}
 
