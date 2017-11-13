@@ -13,7 +13,6 @@ import { InfoPage } from '../../pages/info/info';
 })
 
 export class CanvaPage {
-	//	@ViewChild(ContentDrawer) contentDrawer : ContentDrawer;
 	@ViewChild(Slides) slides: Slides;
 	@ViewChild(Navbar) navBar: Navbar;
 	canvatype: any;
@@ -33,21 +32,6 @@ export class CanvaPage {
 				 private keyboard: Keyboard) {
 		this.canvatype = this.navParams.get('type');
 		this.canvadata.initData(this.canvatype);
-
-		//		this.drawerOptions = {
-		//			handleHeight: 0,
-		//			thresholdFromBottom: (this.platform.height()*0.61),
-		//			thresholdFromTop: (this.platform.height()),
-		//			bounceBack: true
-		//		};
-		//		this.mvpCards.initCards();
-		//		this.showCards();
-		//		for (let i = 0; i<100; i++) {
-		//				if(this.mvpCards.personaCards[i]) {
-		//					console.log('fullfilled ? ');
-		//					console.log(this.mvpCards.personaCards[i]);
-		//				}
-		//			}
 	}
 
 	ionViewDidLoad() {
@@ -78,31 +62,18 @@ export class CanvaPage {
 
 	ngAfterViewInit() {
 		this.slides.freeModeSticky = true;
-		//		if (this.contentDrawer) {
-		//			this.contentDrawer.hideKeyboard();
-		//		}
 	}
 
 	slideChanged() {
 		this.keyboard.close();
-		//		if (this.contentDrawer) {
-		//			this.contentDrawer.hideKeyboard();
-		//		}
-		//		let currentIndex = this.slides.getActiveIndex();
-		//		this.mvpCards.updateCardKeyboard(currentIndex);		
-	}
+    }
 
 	showCards() {
 		if (this.keyboard) {
 			this.keyboard.close();}
-		//		if(this.contentDrawer) {
-		//			this.contentDrawer.showKeyboard();
-		//		}
 	}
 
 	addCard(card) {
-		//		this.mvpCards.personaCardsSelection[0] = card;
-		//		this.contentDrawer.hideKeyboard();
 	}
 
 	createPDF() {

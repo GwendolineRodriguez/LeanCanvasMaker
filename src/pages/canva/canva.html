@@ -1,245 +1,99 @@
 <ion-header no-border>
 
-	<ion-navbar color="primary">
-		<ion-title>{{ canvadata.canva.title }}</ion-title>
-		<ion-buttons end>
-			<button ion-button icon-only (click)="info()" class="right-icon">
-				<ion-icon name="information-circle"></ion-icon>
-			</button>
-		</ion-buttons>
-	</ion-navbar>
+    <ion-navbar color="primary">
+        <ion-title>{{ canvadata.canva.title }}</ion-title>
+        <ion-buttons end>
+            <button ion-button icon-only (click)="info()" class="right-icon">
+                <ion-icon name="information-circle"></ion-icon>
+            </button>
+        </ion-buttons>
+    </ion-navbar>
 </ion-header>
 
 
 <ion-content padding text-center class="greybackground">
-	<ion-slides pager="true" ion-fixed (ionSlideDidChange)="slideChanged()">
-		<ion-slide>
-			<p>Quel le nom de votre projet :</p>
-			<ion-input text-center placeholder="Nom du projet" [(ngModel)]="title"></ion-input>
-			<button color="primary" ion-button class="marg-top-xs" (click)="slides.slideNext()()">Enregistrer</button>	
-		</ion-slide>
-		<ion-slide>
-			<ion-card>
-				<ion-card-header>{{ canvadata.canva.case1 }}</ion-card-header>
-				<ion-card-content>
-					<ion-textarea placeholder='{{ canvadata.placeholder.case1 }}' [(ngModel)]="canva.case1"></ion-textarea>
-				</ion-card-content>
-			</ion-card>
-		</ion-slide>
-		<ion-slide>
-			<ion-card>
-				<ion-card-header>{{ canvadata.canva.case2 }}</ion-card-header>
-				<!--
-<ion-card-header>
-<ion-grid>
-<ion-row>
-<ion-col></ion-col>
-<ion-col>
-{{ canvatype.case2 }}
-</ion-col>
-<ion-col></ion-col>
-<ion-col>
-<ion-fab top right edge><button ion-fab mini color="primary" (tap)="showCards()"><ion-icon name="add"></ion-icon></button></ion-fab>
-</ion-col>
-</ion-row>
-</ion-grid>
-</ion-card-header>
--->
+    <ion-slides pager="true" ion-fixed (ionSlideDidChange)="slideChanged()">
+        <ion-slide>
+            <p>Quel le nom de votre projet :</p>
+            <ion-input text-center placeholder="Nom du projet" [(ngModel)]="title"></ion-input>
+            <button color="primary" ion-button class="marg-top-xs" (click)="slides.slideNext()()">Enregistrer</button>	
+        </ion-slide>
+        <ion-slide>
+            <ion-card>
+                <ion-card-header>{{ canvadata.canva.case1 }}</ion-card-header>
+                <ion-card-content>
+                    <ion-textarea placeholder='{{ canvadata.placeholder.case1 }}' [(ngModel)]="canva.case1"></ion-textarea>
+                </ion-card-content>
+            </ion-card>
+        </ion-slide>
+        <ion-slide>
+            <ion-card>
+                <ion-card-header>{{ canvadata.canva.case2 }}</ion-card-header>
 
-				<ion-card-content>
-					<ion-textarea placeholder="{{ canvadata.placeholder.case2 }}" [(ngModel)]="canva.case2" class="cardsarea"></ion-textarea>
-					<!--
-<ion-grid no-padding class="cardsarearow">
-<ion-row class="marg-bottom-xs">
-<ion-slides slidesPerView="3.5">
-<ion-slide *ngFor="let card of mvpCards.personaCardsSelection">
-<ion-col class="grid-col align-center">
-<img (click)="mvpCards.deleteCard(card, 'persona')" class="modimgsize" [src]=card>
-</ion-col>
-</ion-slide>
-</ion-slides>
-</ion-row>
-</ion-grid>
--->
-				</ion-card-content>
-			</ion-card>		
-		</ion-slide>
-		<ion-slide>
-			<ion-card>
-				<ion-card-header>{{ canvadata.canva.case3 }}</ion-card-header>
+                <ion-card-content>
+                    <ion-textarea placeholder="{{ canvadata.placeholder.case2 }}" [(ngModel)]="canva.case2" class="cardsarea"></ion-textarea>
+                </ion-card-content>
+            </ion-card>		
+        </ion-slide>
+        <ion-slide>
+            <ion-card>
+                <ion-card-header>{{ canvadata.canva.case3 }}</ion-card-header>
+                <ion-card-content>
+                    <ion-textarea placeholder="{{ canvadata.placeholder.case3 }}" [(ngModel)]="canva.case3"></ion-textarea>
+                </ion-card-content>
+            </ion-card>		
+        </ion-slide>
+        <ion-slide>
+            <ion-card>
+                <ion-card-header>{{ canvadata.canva.case4 }}</ion-card-header>
+                <ion-card-content>
+                    <ion-textarea placeholder="{{ canvadata.placeholder.case4 }}" [(ngModel)]="canva.case4"></ion-textarea>
+                </ion-card-content>
+            </ion-card>		
+        </ion-slide>
+        <ion-slide>
+            <ion-card>
+                <ion-card-header>{{ canvadata.canva.case5 }}</ion-card-header>
+                <ion-card-content>
+                    <ion-textarea placeholder="{{ canvadata.placeholder.case5 }}" [(ngModel)]="canva.case5"></ion-textarea>
+                </ion-card-content>
+            </ion-card>		
+        </ion-slide>
+        <ion-slide>
+            <ion-card>
+                <ion-card-header>{{ canvadata.canva.case6 }}</ion-card-header>
+                <ion-card-content>
+                    <ion-textarea placeholder="{{ canvadata.placeholder.case6 }}" [(ngModel)]="canva.case6"></ion-textarea>
+                </ion-card-content>
+            </ion-card>		
+        </ion-slide>
+        <ion-slide>
+            <ion-card>
+                <ion-card-header>{{ canvadata.canva.case7 }}</ion-card-header>
 
-				<ion-card-content>
-					<ion-textarea placeholder="{{ canvadata.placeholder.case3 }}" [(ngModel)]="canva.case3"></ion-textarea>
-				</ion-card-content>
-
-			</ion-card>		
-		</ion-slide>
-		<ion-slide>
-			<ion-card>
-				<ion-card-header>{{ canvadata.canva.case4 }}</ion-card-header>
-
-
-				<!--
-<ion-card-header>
-<ion-grid>
-<ion-row>
-<ion-col></ion-col>
-<ion-col>
-{{ canvatype.case4 }}
-</ion-col>
-<ion-col></ion-col>
-<ion-col>
-<ion-fab top right edge><button ion-fab mini color="primary" (tap)="showCards()"><ion-icon name="add"></ion-icon></button></ion-fab>
-</ion-col>
-</ion-row>
-</ion-grid>			
-</ion-card-header>
--->
-
-				<ion-card-content>
-					<ion-textarea placeholder="{{ canvadata.placeholder.case4 }}" [(ngModel)]="canva.case4"></ion-textarea>
-					<!--
-<ion-grid no-padding class="cardsarearow">
-<ion-row class="marg-bottom-xs">
-<ion-slides slidesPerView="3.5">
-<ion-slide *ngFor="let card of channelCardsSelection">
-<ion-col class="grid-col align-center">
-<img (click)="mvpCards.deleteCard(card, 'channel')" class="modimgsize" [src]=card>
-</ion-col>
-</ion-slide>
-</ion-slides>
-</ion-row>
-</ion-grid>
--->
-				</ion-card-content>
-			</ion-card>		
-		</ion-slide>
-		<ion-slide>
-			<ion-card>
-				<ion-card-header>{{ canvadata.canva.case5 }}</ion-card-header>
-
-
-				<!--
-<ion-card-header>
-<ion-grid>
-<ion-row>
-<ion-col></ion-col>
-<ion-col>
-{{ canvatype.case5 }}
-</ion-col>
-<ion-col></ion-col>
-<ion-col>
-<ion-fab top right edge><button ion-fab mini color="primary" (tap)="showCards()"><ion-icon name="add"></ion-icon></button></ion-fab>
-</ion-col>
-</ion-row>
-</ion-grid>				
-</ion-card-header>
--->
-
-				<ion-card-content>
-					<ion-textarea placeholder="{{ canvadata.placeholder.case5 }}" [(ngModel)]="canva.case5"></ion-textarea>
-					<!--
-<ion-grid no-padding class="cardsarearow">
-<ion-row class="marg-bottom-xs">
-<ion-slides slidesPerView="3.5">
-<ion-slide *ngFor="let card of kpiCardsSelection">
-<ion-col class="grid-col align-center">
-<img (click)="mrvpCards.deleteCard(card, 'kpi')" class="modimgsize" [src]=card>
-</ion-col>
-</ion-slide>
-</ion-slides>
-</ion-row>
-</ion-grid>
--->
-				</ion-card-content>
-
-			</ion-card>		
-		</ion-slide>
-		<ion-slide>
-			<ion-card>
-				<ion-card-header>{{ canvadata.canva.case6 }}</ion-card-header>
-
-				<ion-card-content>
-					<ion-textarea placeholder="{{ canvadata.placeholder.case6 }}" [(ngModel)]="canva.case6"></ion-textarea>
-				</ion-card-content>
-
-			</ion-card>		
-		</ion-slide>
-		<ion-slide>
-			<ion-card>
-				<ion-card-header>{{ canvadata.canva.case7 }}</ion-card-header>
-
-				<ion-card-content>
-					<ion-textarea placeholder="{{ canvadata.placeholder.case7 }}" [(ngModel)]="canva.case7"></ion-textarea>
-				</ion-card-content>
-
-			</ion-card>		
-		</ion-slide>
-		<ion-slide>
-			<ion-card>
-				<ion-card-header>{{ canvadata.canva.case8 }}</ion-card-header>
-
-				<ion-card-content>
-					<ion-textarea placeholder="{{ canvadata.placeholder.case8 }}" [(ngModel)]="canva.case8"></ion-textarea>
-				</ion-card-content>
-
-			</ion-card>		
-		</ion-slide>
-		<ion-slide>
-			<ion-card>
-				<ion-card-header>{{ canvadata.canva.case9 }}</ion-card-header>
-
-				<ion-card-content>
-					<ion-textarea placeholder="{{ canvadata.placeholder.case9 }}" [(ngModel)]="canva.case9"></ion-textarea>
-				</ion-card-content>
-			</ion-card>
-			<ion-fab right bottom>
-				<button ion-fab color="primary" (click)="createPDF()"><ion-icon name="arrow-dropright"></ion-icon></button>
-			</ion-fab>
-		</ion-slide>
-	</ion-slides>
+                <ion-card-content>
+                    <ion-textarea placeholder="{{ canvadata.placeholder.case7 }}" [(ngModel)]="canva.case7"></ion-textarea>
+                </ion-card-content>
+            </ion-card>		
+        </ion-slide>
+        <ion-slide>
+            <ion-card>
+                <ion-card-header>{{ canvadata.canva.case8 }}</ion-card-header>
+                <ion-card-content>
+                    <ion-textarea placeholder="{{ canvadata.placeholder.case8 }}" [(ngModel)]="canva.case8"></ion-textarea>
+                </ion-card-content>
+            </ion-card>		
+        </ion-slide>
+        <ion-slide>
+            <ion-card>
+                <ion-card-header>{{ canvadata.canva.case9 }}</ion-card-header>
+                <ion-card-content>
+                    <ion-textarea placeholder="{{ canvadata.placeholder.case9 }}" [(ngModel)]="canva.case9"></ion-textarea>
+                </ion-card-content>
+            </ion-card>
+            <ion-fab right bottom>
+                <button ion-fab color="primary" (click)="createPDF()"><ion-icon name="arrow-dropright"></ion-icon></button>
+            </ion-fab>
+        </ion-slide>
+    </ion-slides>
 </ion-content>
-
-<!--
-<content-drawer *ngIf="mvpCards.persona" [options]="drawerOptions" class="baseabsolute defaultbackground">
-<ion-grid no-padding>
-<ion-row class="marg-top-xxs marg-bottom-xxs">
-<ion-slides slidesPerView="2.1">
-<ion-slide *ngFor="let card of mvpCards.personaCards">
-<ion-col class="grid-col align-center" col-2>
-<img (click)="addCard(card)" class="modimgsize" [src]=card>
-</ion-col>
-</ion-slide>
-</ion-slides>
-</ion-row>
-</ion-grid>
-</content-drawer>
-
-<content-drawer *ngIf="mvpCards.kpi" [options]="drawerOptions" class="baseabsolute defaultbackground">
-<ion-grid no-padding>
-<ion-row class="marg-top-xxs marg-bottom-xxs">
-<ion-slides slidesPerView="2.1">
-<ion-slide *ngFor="let card of mvpCards.kpiCards">
-<ion-col class="grid-col align-center" col-2>
-<img (click)="addCard(card)" class="modimgsize" [src]=card>
-</ion-col>
-</ion-slide>
-</ion-slides>
-</ion-row>
-</ion-grid>
-</content-drawer>
-
-<content-drawer *ngIf="mvpCards.channels" [options]="drawerOptions" class="baseabsolute defaultbackground">
-<ion-grid no-padding>
-<ion-row class="marg-top-xxs marg-bottom-xxs">
-<ion-slides slidesPerView="2.1">
-<ion-slide *ngFor="let card of mvpCards.channelCards">
-<ion-col class="grid-col align-center" col-2>
-<img (click)="addCard(card)" class="modimgsize" [src]=card>
-</ion-col>
-</ion-slide>
-</ion-slides>
-</ion-row>
-</ion-grid>
-</content-drawer>
--->
