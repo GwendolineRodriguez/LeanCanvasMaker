@@ -7,12 +7,9 @@ Lean Canvas Maker is an ionic app allowing you to make your Lean Canvas, and sen
 <img src="./resources/screenshots/Image-uploaded-from-iOS-(2)x2.png" width="250">
 </div>
 
-## Setup of the project
+## Project Setup
 
-
-```
+```javascript
 npm install
-```
-```
 ionic serve
 ```
